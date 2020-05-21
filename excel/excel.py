@@ -42,4 +42,13 @@ class excel:
 
     #写入Excel
     def writeExcel(self):
-        pass
+        #Open File
+        wb = openpyxl.Workbook()
+        #crate Title
+        wb.create_sheet(index=0,title='BOM')
+        wb.create_sheet(index=1,title='Publish')
+        wb.create_sheet(index=3,title='Pass')
+        wb.create_sheet(index=4,title='In')
+        wb.create_sheet(index=5,title='Demand')
+        wb.create_sheet(index=6,title='SysDemand')
+
