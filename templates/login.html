@@ -1,0 +1,15 @@
+{%extends 'template.html'%}
+
+{%block title%}{{d.title}}{%endblock%}
+
+{%block body%}
+<table>
+    {% for l in d.data %}
+        <tr>
+            {% for i in l %}
+            <td>{{i}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+{%endblock%}

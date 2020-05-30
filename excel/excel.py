@@ -12,6 +12,7 @@ class excel:
     def readExcel(self,readFile):
         # try:
             #Excel数据
+            excelData = {}
             #Excel表数据
             excelSheetData = []
             #openFile
@@ -20,17 +21,18 @@ class excel:
             sheetQuantity = len(e.sheets())
             sheeetNames = e.sheet_names()
             #读取表内容
-            print(sheeetNames)
             for n in sheeetNames:
                 #读取表
                 s = e.sheet_by_name(n)
                 #获得总行
                 nrows = s.nrows
-                for j in range(nrows):
-                    excelSheetData.append(s.row(j))
+                #获得总列
+                ncol = s.ncols
+                for j in range(ncol):
+                    excelData[sheelTitle[j]] = s.col_values(j)
 
 
-            return excelSheetData
+            return excelData
 
 
         # except:

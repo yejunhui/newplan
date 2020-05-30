@@ -1,6 +1,7 @@
 import os,sys,time
-from excel.excel import excel
 import pandas as pd
+from excel.excel import excel
+
 
 print('*'*100)
 print('New Time：',time.localtime(time.time()))
@@ -29,8 +30,8 @@ for l in list :
     else:
         print(l,'当前文件个不是.xls或.xlsx文件，系统将会自动跳过该文件！')
 
-df
-print(datas[0][0])
+df = pd.DataFrame(datas)
+print(df.loc[8])
 
 
 
