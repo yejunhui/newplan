@@ -28,11 +28,11 @@ class excel:
                 nrows = s.nrows
                 #获得总列
                 ncol = s.ncols
-                for j in range(ncol):
-                    excelData[sheelTitle[j]] = s.col_values(j)
+                for l in range(nrows):
+                    excelSheetData.append(s.row_values(l))
 
 
-            return excelData
+            return excelSheetData
 
 
         # except:

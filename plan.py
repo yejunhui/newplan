@@ -1,5 +1,6 @@
 import os,sys,time
 import pandas as pd
+from dataDispose import Dispose
 from excel.excel import excel
 
 
@@ -9,7 +10,8 @@ print('welcome to use!')
 print('Please enter the working directory:')
 print('Enter \'?q\' exit!')
 print('*'*100)
-directory = input('Directly enter the current directory!(%s)'%os.getcwd())
+#directory = input('Directly enter the current directory!(%s)'%os.getcwd())
+directory = 'e:/qd'
 
 if directory == '?q' :
     sys.exit(0)
@@ -26,12 +28,13 @@ e = excel()
 for l in list :
     if 'xls' in l :
         print('正在读取文件：%s'%l)
-        datas = e.readExcel(directory+l)
+        datas.append(e.readExcel(directory+l))
     else:
         print(l,'当前文件个不是.xls或.xlsx文件，系统将会自动跳过该文件！')
 
-df = pd.DataFrame(datas)
-print(df.loc[8])
+disp = Dispose()
+df = disp.analyze(datas)
+print(df)
 
 
 
