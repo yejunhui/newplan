@@ -33,9 +33,8 @@ for l in list :
         print(l,'当前文件个不是.xls或.xlsx文件，系统将会自动跳过该文件！')
 
 disp = Dispose()
-df = disp.analyze(datas)
-print(df)
+df,newData = disp.analyze(datas)
 
-
+e.writePlan([df],newData)
 
 print('*'*100)
